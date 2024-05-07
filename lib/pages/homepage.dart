@@ -71,6 +71,8 @@ class HompageState extends State<Homepage>{
               // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
 
+                  Divider(),
+
                   /// Top Container with Ink Well Effect
                   AddItemToListWidget(),
 
