@@ -37,6 +37,8 @@ class HompageState extends State<Homepage>{
     deviceHeight = mediaQuery.size.height;
     deviceWidth = mediaQuery.size.width;
 
+    print('padding-top: ${paddingTop}');
+
 
     // print("padding: ${MediaQuery.of(context).padding.top}");
     // print("size: ${MediaQuery.of(context).size.height}");
@@ -70,8 +72,6 @@ class HompageState extends State<Homepage>{
               // mainAxisSize: MainAxisSize.max,
               // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-
-                  Divider(),
 
                   /// Top Container with Ink Well Effect
                   AddItemToListWidget(),
