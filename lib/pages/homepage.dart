@@ -5,6 +5,12 @@ import "package:flutter/material.dart";
 import "../widgets/secondary/add_list_item_widget.dart";
 import "../helpers/height_width_relative_percentage.dart";
 
+enum Car {
+  red,
+  green,
+  blue
+}
+
 class Homepage extends StatefulWidget{
 
   String someString = "someString";
@@ -25,8 +31,18 @@ class HompageState extends State<Homepage>{
   Map<String, String> listOfListItemContent = {
     "May 6:": "Luke 6:38 - Reciprocity",
     "May 5:": "Aye Ole - Infinity 💰",
-    "May 4:": "God Bless You! 💐🥂"
+    "May 4:": "God Bless You! 💐🥂",
+    "initial": "1",
   };
+
+  @override
+  void initState(){
+
+    super.initState();
+    print("initState");
+
+  }
+
 
   Widget build(BuildContext context){
 
@@ -38,6 +54,8 @@ class HompageState extends State<Homepage>{
     deviceWidth = mediaQuery.size.width;
 
     print('padding-top: ${paddingTop}');
+    print('deviceHeight: ${deviceHeight}');
+    print("deviceWidth: ${deviceWidth}");
 
 
     // print("padding: ${MediaQuery.of(context).padding.top}");
