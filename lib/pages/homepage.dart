@@ -23,6 +23,8 @@ class Homepage extends StatefulWidget{
 
 class HompageState extends State<Homepage>{
 
+  MediaQueryData? mediaQuery;
+
   bool isTapped = false;
   double? paddingTop;
   double? deviceHeight;
@@ -43,15 +45,17 @@ class HompageState extends State<Homepage>{
 
   }
 
+  @override
+  void didChangeDependencies(){
+    mediaQuery = MediaQuery.of(context);
+    paddingTop = mediaQuery!.padding.top;
+    deviceHeight = mediaQuery!.size.height;
+    deviceWidth = mediaQuery!.size.width;
+  }
 
   Widget build(BuildContext context){
 
     print("built widget");
-    // print("someString: ${widget.someString}");
-    var mediaQuery = MediaQuery.of(context);
-    paddingTop = mediaQuery.padding.top;
-    deviceHeight = mediaQuery.size.height;
-    deviceWidth = mediaQuery.size.width;
 
     print('padding-top: ${paddingTop}');
     print('deviceHeight: ${deviceHeight}');
@@ -76,7 +80,7 @@ class HompageState extends State<Homepage>{
         // ),
         // backgroundColor: Colors.white70,
         body: Container(
-          width: mediaQuery.size.width,
+          width: deviceWidth,
           padding: EdgeInsets.fromLTRB(
               0,
               paddingTop! + (sizeRatio['height'] * deviceHeight!), // + 10px
@@ -171,7 +175,7 @@ class HompageState extends State<Homepage>{
 
                   Container(
                     // color: Colors.deepOrangeAccent,
-                    height: mediaQuery.size.height * .5,
+                    height: deviceHeight! * .5,
                     width: .85 * MediaQuery.of(context).size.width,
                     child: ListView.builder(
                         padding: EdgeInsets.only(
