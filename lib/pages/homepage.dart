@@ -51,6 +51,8 @@ class HompageState extends State<Homepage>{
     paddingTop = mediaQuery!.padding.top;
     deviceHeight = mediaQuery!.size.height;
     deviceWidth = mediaQuery!.size.width;
+
+    super.didChangeDependencies();
   }
 
   Widget build(BuildContext context){
